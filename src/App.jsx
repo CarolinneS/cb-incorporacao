@@ -626,77 +626,64 @@ const App = () => {
 
                   <form
                     action="https://formsubmit.co/contato@cb18.site"
-                    onSubmit={handleSubmit}
-                    className="space-y-4"
                     method="POST"
-                  />
-                  <input type="hidden" name="_captcha" value="false" />
-                  <input
-                    type="hidden"
-                    name="_subject"
-                    value="Contato via site - CB Incorporação"
-                  />
-                  <input type="hidden" name="_template" value="table" />
+                    className="space-y-4 max-w-lg mx-auto"
+                  >
+                    {/* Configurações do FormSubmit */}
+                    <input type="hidden" name="_captcha" value="false" />
+                    <input
+                      type="hidden"
+                      name="_subject"
+                      value="Contato via site - CB Incorporação"
+                    />
+                    <input type="hidden" name="_template" value="table" />
+                    {/* <input type="hidden" name="_next" value="https://SEU-DOMINIO/obrigado" /> */}
 
-                  <div>
-                    <Input
+                    {/* Campos */}
+                    <input
                       type="text"
                       name="nome"
                       placeholder="Seu nome completo"
-                      value={formData.nome}
-                      onChange={handleInputChange}
                       required
-                      className="w-full"
+                      className="w-full p-3 border border-gray-300 rounded-md"
                     />
-                  </div>
-
-                  <div>
-                    <Input
+                    <input
                       type="email"
                       name="email"
                       placeholder="Seu e-mail"
-                      value={formData.email}
-                      onChange={handleInputChange}
                       required
-                      className="w-full"
+                      className="w-full p-3 border border-gray-300 rounded-md"
                     />
-                  </div>
-
-                  <div>
-                    <Input
+                    <input
                       type="tel"
                       name="telefone"
                       placeholder="Seu telefone"
-                      value={formData.telefone}
-                      onChange={handleInputChange}
                       required
-                      className="w-full"
+                      className="w-full p-3 border border-gray-300 rounded-md"
                     />
-                  </div>
 
-                  <div>
                     <select
                       name="tipoInvestimento"
-                      value={formData.tipoInvestimento}
-                      onChange={handleInputChange}
                       required
-                      className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                      defaultValue=""
+                      className="w-full p-3 border border-gray-300 rounded-md"
                     >
-                      <option value="">Tipo de investimento desejado</option>
+                      <option value="" disabled>
+                        Tipo de investimento desejado
+                      </option>
                       <option value="cota-20k">Cota de R$ 20.000</option>
                       <option value="cota-50k">Cota de R$ 50.000</option>
                       <option value="cota-100k">Cota de R$ 100.000</option>
                       <option value="personalizado">Valor personalizado</option>
                     </select>
-                  </div>
 
-                  <Button
-                    type="submit"
-                    className="w-full bg-primary hover:bg-primary/90 text-white py-3"
-                  >
-                    Enviar Solicitação
-                    <ArrowRight className="ml-2 w-5 h-5" />
-                  </Button>
+                    <button
+                      type="submit"
+                      className="w-full bg-white text-primary font-bold py-3 rounded-md border border-primary hover:bg-primary hover:text-white transition"
+                    >
+                      Enviar Solicitação
+                    </button>
+                  </form>
                 </CardContent>
               </Card>
             </motion.div>
@@ -715,7 +702,8 @@ const App = () => {
               </span>
             </div>
             <p className="text-gray-400 mb-4">
-              © 2025 CB Incorporação Imobiliária. Todos os direitos reservados.
+              © {new Date().getFullYear()} CB Incorporação Imobiliária. Todos os
+              direitos reservados.
             </p>
             <div className="flex justify-center space-x-6 text-sm text-gray-400">
               <a href="#" className="hover:text-white transition-colors">
