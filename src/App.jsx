@@ -636,6 +636,11 @@ const App = () => {
                       name="_subject"
                       value="Contato via site - CB Incorporação"
                     />
+                    <input
+                      type="hidden"
+                      name="_next"
+                      value="https://cbincorporacao.com/obrigado.html"
+                    />
                     <input type="hidden" name="_template" value="table" />
                     {/* <input type="hidden" name="_next" value="https://SEU-DOMINIO/obrigado" /> */}
 
